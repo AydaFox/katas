@@ -40,6 +40,10 @@ describe("fillSquare", () => {
       [1, 2, 3, 4, 5, 6, 7],
       [null, null, null, null, null, null, null],
       [null, null, null, null, null, null, null],
+      [null, null, null, null, null, null, null],
+      [null, null, null, null, null, null, null],
+      [null, null, null, null, null, null, null],
+      [null, null, null, null, null, null, null],
     ];
 
     expect(fillSquare(input1)).toEqual(output1);

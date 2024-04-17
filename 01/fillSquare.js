@@ -1,6 +1,39 @@
 const fillSquare = (arr) => {
-    
+  if (arr.length === 1 && arr[0].length <= 1) {
+    return arr;
+  }
+  const newArr = arr.map((element) => {
+    const newElement = element.map((subElement) => subElement);
+    return newElement;
+  });
+
+  let size = 0;
+  newArr.forEach((subArray) => {
+    if (subArray.length > size) {
+      size = subArray.length;
+    }
+  });
+
+  const nullArray = new Array(size).fill(null);
+  const result = [];
+
+  for (let i = 0; i < size; i++) {
+    if (newArr[i]) {
+      result.push(newArr[i]);
+    } else {
+      result.push(nullArray);
+    }
+    if (result[i].length < size) {
+      for (let j = result[i].length; j < size; j++) {
+        result[i].push(null);
+      }
+    }
+  }
+  return result;
 };
+
+// find longest subarray
+// fill out square with that size
 
 module.exports = { fillSquare };
 
