@@ -1,3 +1,11 @@
+const vowelShift = (str, n) => {
+  if ((n = 0)) {
+    return str;
+  }
+};
+
+module.exports = { vowelShift };
+
 /*
 Given a string of any length and a number n, shift every vowel 
 in the string n vowel positions to the right. The final vowel in 
