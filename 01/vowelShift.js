@@ -1,7 +1,31 @@
 const vowelShift = (str, n) => {
-  if ((n = 0)) {
+  if ((n === 0)) {
     return str;
   }
+
+  const chars = str.split('');
+  const regex = /[aeiou]/;
+  const vowels = [];
+  const vowelIndexes = [];
+  chars.forEach((char, i) => {
+    if (regex.test(char)){
+      vowelIndexes.push(i);
+      vowels.push(char)
+    }
+  })
+
+  if (vowels.length < 2) {
+    return str;
+  }
+
+  for (let j = 0; j < n; j++) {
+    vowels.unshift(vowels[vowels.length-1]);
+    vowels.pop();
+  }
+  vowels.forEach((vowel, k) => {
+    chars[vowelIndexes[k]] = vowel;
+  })
+  return chars.join('');
 };
 
 module.exports = { vowelShift };
