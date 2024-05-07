@@ -1,3 +1,9 @@
+const simplifyDirections = () => {
+
+}
+
+module.exports = { simplifyDirections };
+
 /*
 The challenge is to implement a function that takes an array of 
 directions and simplifies them. Directions can be simplified if 
