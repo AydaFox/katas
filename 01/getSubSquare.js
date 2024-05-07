@@ -1,3 +1,28 @@
+const getSubSquare = (matrix, x, y) => {
+  const neo = matrix.map((subArray) => {
+    return subArray.map((value) => value);
+  });
+
+  const yFiltered = neo.filter((_, i) => {
+    return i >= y && i < y + 3;
+  });
+  while (yFiltered.length < 3) {
+    yFiltered.push([null, null, null]);
+  }
+
+  const xyFiltered = yFiltered.map((subArray) => {
+    const newSub = subArray.slice(x, x + 3);
+    while (newSub.length < 3) {
+      newSub.push(null);
+    }
+    return newSub;
+  });
+
+  return xyFiltered;
+};
+
+module.exports = { getSubSquare };
+
 /*
 Given a square matrix (two-dimensional array) and a 
 xStartIndex and a yStartIndex, you must return a 3 * 3 
